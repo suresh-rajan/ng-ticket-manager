@@ -1,0 +1,14 @@
+<header>
+<div class="w3-bar w3-teal w3-display w3-padding">
+    <a routerLink="/" class = "w3-left w3-button w3-hover-teal" title="home" (click)="onClick('dashboard')" >Tickert Manager</a>
+    <span *ngIf = "authSvc.checkAuthority()">
+        <a routerLink="/" [ngClass] = "getClass('search')" title="search" (click)="onClick('search')"><i class="fa fa-search"></i></a>
+        <a routerLink="/" [ngClass] = "getClass('messages')" title="messages" (click)="onClick('messages')" ><i class="fa fa-envelope"></i></a>
+        <a routerLink="/" class="w3-right w3-bar-item w3-button" title="logout" (click)="onClick('logout')"><i class="fa fa-sign-out"></i></a>
+    </span>
+    <span *ngIf = "!authSvc.checkAuthority()">
+        <a routerLink="/login"[ngClass] = "getUserActiveClass('register')" title="register" (click)="onClick('register')" ><i class="fa fa-user-plus"></i></a>
+        <a routerLink="/login"[ngClass] = "getUserActiveClass('login')" title="login" (click)="onClick('login')"><i class="fa fa-sign-in"></i></a>
+    </span>
+</div>
+</header>

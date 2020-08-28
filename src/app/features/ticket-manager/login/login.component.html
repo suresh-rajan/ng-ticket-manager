@@ -1,0 +1,20 @@
+<div class="w3-animate-opacity w3-display">
+  <form class="w3-container w3-card w3-display-middle">
+
+    <h2 class="w3-text-teal">Login </h2>
+
+    <p>
+      <label>User Id</label>
+      <input class="w3-input w3-border w3-round" type="text"  [(ngModel)]="userId"   [ngModelOptions]="{standalone: true}" >
+    </p>
+
+    <p>
+      <label>Password</label>
+      <input class="w3-input w3-border w3-round" type="password" [(ngModel)]="password"   [ngModelOptions]="{standalone: true}">
+    </p>
+
+    <p>
+      <button class="w3-btn w3-round w3-teal" (click) = "login()" >Login</button>
+    </p>
+  </form>
+</div>

@@ -1,0 +1,67 @@
+<div class="w3-container w3-card w3-padding w3-display-middle w3-animate-opacity" style="width: 80%">
+  <div class="w3-container" style="padding-top: 8px;">
+      <div class="w3-container w3-light-grey" style="padding-left: 10.5px;">
+          <h2 style="padding-top: 12px;">New Issue</h2>
+      </div>
+  </div>
+  <br/>
+  <div class="w3-container">
+    <div style="position: relative;">
+      <mat-form-field appearance="fill" style="width: 10%;">
+        <mat-label>Tracker</mat-label>
+        <mat-select required>
+          <mat-option value="0">Bug</mat-option>
+          <mat-option value="1">Feature</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" style="width: 90%;">
+        <mat-label>Title</mat-label>
+        <input required matInput>
+      </mat-form-field>
+    </div>
+    <br/>
+    <mat-form-field appearance="fill" style="width: 100%;">
+      <mat-label>Description</mat-label>
+      <textarea required matInput style="height: 128px;"></textarea>
+    </mat-form-field>
+    <br/>
+    <div class="w3-container w3-card w3-light-grey" style="padding-left: 10.5px;">
+      <h4>Ticket Information</h4>
+      <br/>
+
+      <div class="w3-container">
+      <mat-form-field appearance="fill" style="width: 50%;">
+        <mat-label>Assignee</mat-label>
+        <input required matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill" style="width: 50%;">
+        <mat-label>Author</mat-label>
+        <input required matInput>
+      </mat-form-field>
+    </div>
+    <div class="w3-container">
+      <mat-form-field appearance="fill" style="width: 50%;">
+        <mat-label>Start Date</mat-label>
+        <!-- #docregion toggle -->
+        <input required matInput [matDatepicker]="sdpicker">
+        <mat-datepicker-toggle matSuffix [for]="sdpicker"></mat-datepicker-toggle>
+        <mat-datepicker #sdpicker></mat-datepicker>
+        <!-- #enddocregion toggle -->
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" style="width: 50%;">
+        <mat-label>End Date</mat-label>
+        <!-- #docregion toggle -->
+        <input required matInput [matDatepicker]="edpicker">
+        <mat-datepicker-toggle matSuffix [for]="edpicker"></mat-datepicker-toggle>
+        <mat-datepicker #edpicker></mat-datepicker>
+        <!-- #enddocregion toggle -->
+      </mat-form-field>
+    </div>
+  </div>
+  </div>
+  <br/>
+
+  <button mat-raised-button color="primary">Create</button>
+
+</div>
